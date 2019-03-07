@@ -37,7 +37,6 @@ public class VehiclesPassBy {
      * @param args Console args
      */
     public static void main(String[] args) {
-//        int[] passedVehicles = {1, 3, 4, 2, 3, 1, 4, 3, 1, 2, 4, 2, 3, 1, 2, 4, 3, 2, 1, 2, 3, 4, 2, 3, 1, 4, 2, 1, 2, 4, 2, 1, 2, 3, 1, 2};
         int[] passedVehicles = {1, 3, 4, 2, 3, 2};
         System.out.println(getMostFrequentType(passedVehicles));
     }
@@ -50,14 +49,12 @@ public class VehiclesPassBy {
             countsByType[v - 1] += 1;
         }
 
-        // Finds the max count
         int typeWithMaxCount = 0;
         for(int i = 0; i < countsByType.length; i++){
             if(countsByType[i] > countsByType[typeWithMaxCount])
                 typeWithMaxCount = i;
         }
 
-        // Retrieves the type by the value
         return VehicleType.searchByValue(typeWithMaxCount + 1);
     }
 }
